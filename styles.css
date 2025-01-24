@@ -9,14 +9,21 @@ body, h1, h2, p, ul, li, a {
 }
 
 /* Corpo geral */
-body {
+/*body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+} */
+body {
+    background-image: url('Fotos/pexels-djalmaphotos-705310.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
 }
+
 
 /* Cabeçalho */
 header {
@@ -45,6 +52,7 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 main section {
@@ -67,6 +75,7 @@ main img {
 /* Lista de regras */
 ul {
     margin-left: 20px;
+
 }
 
 li {
@@ -115,7 +124,7 @@ section div img:hover {
 
 .image-large {
     max-width: 100%; /* Garante que as imagens não excedam o contêiner */
-    height: auto;    /* Mantém a proporção da imagem */
+    height: 10%;    /* Mantém a proporção da imagem */
     object-fit: cover; /* Ajusta o conteúdo para caber no tamanho definido */
     display: block;  /* Centraliza a imagem no contêiner */
     margin: 0 auto;  /* Ajusta a margem para centralizar */
@@ -123,10 +132,32 @@ section div img:hover {
 
 .image-view-section {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza as imagens */
     align-items: center;
-    height: 100%; /* Ajusta a altura do contêiner */
+    gap: 15px; /* Espaçamento entre as imagens */
+    flex-wrap: wrap; /* Permite que as imagens se movam para a linha seguinte se necessário */
+}
+/* Ajustando o tamanho das imagens pequenas */
+.image-view-section img {
+    width: 120px; /* Defina um tamanho fixo para as imagens pequenas */
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
 }
 
+.image-view-section img:hover {
+    border-color: lightgreen;
+}
+
+
+/* Adicionando estilo ao iframe */
+iframe[name="Cachecol"] {
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    max-width: 90%; /* Limita a largura máxima */
+    height: auto; /* Ajusta a altura proporcionalmente */
+}
 
 /*Nesta página falta adicionar os link's do facabook e Insta*/
