@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Inscreva-se e habilite-se a ganhar!</h1>
-        <a href="index.html">Voltar</a>
+       
     </header>
     <nav>
        
@@ -39,13 +39,17 @@
                 <legend>Pagamento</legend>
 
                 <div class="form-group">
-                    <label for="pagamento">Pagamento via MBWAY:</label>
+                    <label for="pagamento">Insira seu número:</label>
                     <input type="text" id="pagamento" name="pagamento" placeholder="Número MBWAY" required aria-label="Digite o número do MBWAY">
                 </div>
             </fieldset>
 
             <div class="form-actions">
-                <button type="submit" class="btn-submit">Enviar</button>
+                 <button class="voltar" onclick="window.location.href='index.html'; "">Voltar 
+                </button>
+
+                <button type="submit" class="btn-submit"> Enviar </button>
+                
             </div>
         </form>
     </main>

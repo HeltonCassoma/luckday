@@ -77,15 +77,15 @@ a.button {
 }
 
 a.button:hover {
-    background-color: #45a049;
+    background-color:green;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #f1f1f1;
-    color: #555;
+    background-color:  #333;
+    color: #fff;
     margin-top: 20px;
 }
 section div {

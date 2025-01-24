@@ -7,10 +7,11 @@ body {
 }
 
 header {
-    text-align: center;
-    padding: 1rem;
     background-color: #4CAF50;
-    color: #fff;
+    color: white;
+    text-align: center;
+    padding:1%;
+    border-style: none;
 }
 
 main {
@@ -80,13 +81,31 @@ input:focus {
 }
 
 .btn-submit:hover {
+    background-color:chartreuse;
+}
+.voltar{
+    padding: 0.7rem 2rem;
     background-color:#4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.voltar:hover {
+    background-color:darkseagreen;
+}
 footer {
     text-align: center;
     padding: 1rem;
     background-color: #333;
     color: #fff;
     margin-top: 2rem;
+}
+.form-actions{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
 }
