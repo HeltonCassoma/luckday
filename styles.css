@@ -1,0 +1,121 @@
+/* styles.css */
+
+/* Reset básico */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Corpo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding:1%;
+    border-style: none;
+    
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+main img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* Lista de regras */
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Botão */
+a.button {
+    display: inline-block;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.button:hover {
+    background-color: #45a049;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    color: #555;
+    margin-top: 20px;
+}
+section div {
+    display: flex;
+    gap: 10px;
+}
+section div img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+section div img:hover {
+    border-color: #4CAF50;
+}
+
+.image-large {
+    max-width: 100%; /* Garante que as imagens não excedam o contêiner */
+    height: auto;    /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta o conteúdo para caber no tamanho definido */
+    display: block;  /* Centraliza a imagem no contêiner */
+    margin: 0 auto;  /* Ajusta a margem para centralizar */
+}
+
+.image-view-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ajusta a altura do contêiner */
+}
+/*Nesta página falta adicionar os link's do facabook e Insta*/

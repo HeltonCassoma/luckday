@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="stylesheet" href="inscricao.css">
+</head>
+<body>
+    <header>
+        <h1>Inscreva-se e habilite-se a ganhar!</h1>
+        <a href="index.html">Voltar</a>
+    </header>
+    <nav>
+       
+    </nav>
+    <main>
+        <form action="processa_inscricao.php" method="post" class="form-inscricao">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required aria-label="Digite seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Número de Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required aria-label="Digite seu número de telefone">
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required aria-label="Digite seu endereço">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Pagamento</legend>
+
+                <div class="form-group">
+                    <label for="pagamento">Pagamento via MBWAY:</label>
+                    <input type="text" id="pagamento" name="pagamento" placeholder="Número MBWAY" required aria-label="Digite o número do MBWAY">
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; Luck Day, todos os direitos reservados, 2025</p>
+    </footer>
+</body>
+</html>
