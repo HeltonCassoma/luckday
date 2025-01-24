@@ -27,6 +27,15 @@ header {
     border-style: none;
     
 }
+nav a {
+    display: flex;
+    color: white;
+    position:sticky;
+    justify-content:right;
+}
+nav a:hover{
+    color:bisque;
+}
 
 /* Conteúdo principal */
 main {
@@ -101,7 +110,7 @@ section div img {
 }
 
 section div img:hover {
-    border-color: #4CAF50;
+    border-color:lightgreen;
 }
 
 .image-large {
@@ -118,4 +127,6 @@ section div img:hover {
     align-items: center;
     height: 100%; /* Ajusta a altura do contêiner */
 }
+
+
 /*Nesta página falta adicionar os link's do facabook e Insta*/
