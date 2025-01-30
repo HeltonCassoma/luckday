@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luck Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login / Cadastro - Sorteios</title>
+    <link rel="stylesheet" href="ind.css">
 </head>
 <body>
-   
-    <header>
-        <h1>Luck Day</h1>
-
-        <nav>
-            <a href="vencedores.html"> Vencedores </a>
-        </nav>
-        
-    </header>
-    
-
-    <main>
-       
-
-        <h2>Prêmio do Dia</h2>
-        
-        <section>
-            <iframe name="Cachecol" frameborder="0" style="width: 100%; height: 300px"></iframe>
-            <div class="image-view-section">
-                 <a href="Fotos/cachecol-1-grande.jpg" target="Cachecol">
-                    <img class="imaga-large" src="Fotos/cachecol-1-pequeno.jpg" alt= "cachecol-pequeno"> </a>
-
-                 <a href="Fotos/cachecol2_grande.jpg" target="Cachecol">
-                    <img src="Fotos/cachecol2_pequeno.jpg" alt="cachecol2_pequeno">
-                 </a>
-
-                 <a href="Fotos/cachecol3_grande.jpg" target="Cachecol">
-                    <img src="Fotos/cachecol3_pequeno.jpg" alt="cachecol3_pequeno">
-                 </a>
-            
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <form id="auth-form">
+            <div id="extra-fields" style="display: none;">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="text" id="morada" placeholder="Morada" required>
+                <input type="tel" id="telefone" placeholder="Número de Telefone" required>
+                <input type="text" id="nif" placeholder="NIF" required>
+                <input type="date" id="data_nascimento" required>
             </div>
-            <p>Cachecol Benfica 1904.</p>
-        </section>
-        <section>
-            <h2>Regras do Jogo</h2>
-            <ul>
-                <li>Valor de participação: 1€.</li>
-                <li>Curtir nossas páginas no Instagram e Facebook.</li>
-                <li>Preencher o formulário corretamente.</li>
-            </ul>
-        </section>
-        <a href="inscricao.html" class="button">Participe Agora</a>
-    </main>
-    
-    <footer>
-        <p>&copy; Luck Day, todos os direitos reservados, 2025.</p>
-    </footer>
+            <input type="text" id="username" placeholder="Nome" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit" id="submit-button">Entrar</button>
+        </form>
+        <p id="toggle-text">Não tem uma conta? <a href="#" id="toggle-form">Cadastre-se</a></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let formTitle = document.getElementById("form-title");
+    let extraFields = document.getElementById("extra-fields");
+    let usernameField = document.getElementById("username");
+    let submitButton = document.getElementById("submit-button");
+    let toggleText = document.getElementById("toggle-text");
+
+    function toggleForm(event) {
+        event.preventDefault();
+
+        if (formTitle.textContent === "Login") {
+            formTitle.textContent = "Cadastro";
+            extraFields.style.display = "block";
+            usernameField.style.display = "none";
+            submitButton.textContent = "Cadastrar";
+            toggleText.innerHTML = 'Já tem uma conta? <a href="#" id="toggle-form">Entrar</a>';
+        } else {
+            formTitle.textContent = "Login";
+            extraFields.style.display = "none";
+            usernameField.style.display = "block";
+            submitButton.textContent = "Entrar";
+            toggleText.innerHTML = 'Não tem uma conta? <a href="#" id="toggle-form">Cadastre-se</a>';
+        }
+
+        // Reatribuir evento ao novo link após troca de HTML
+        document.getElementById("toggle-form").addEventListener("click", toggleForm);
+    }
+
+    // Iniciar evento na primeira execução
+    document.getElementById("toggle-form").addEventListener("click", toggleForm);
+});
+
+    </script>
 </body>
 </html>
-
-

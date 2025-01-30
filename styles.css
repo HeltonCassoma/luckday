@@ -106,21 +106,7 @@ footer {
     color: #fff;
     margin-top: 20px;
 }
-section div {
-    display: flex;
-    gap: 10px;
-}
-section div img {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
-section div img:hover {
-    border-color:lightgreen;
-}
 
 .image-large {
     max-width: 100%; /* Garante que as imagens não excedam o contêiner */
