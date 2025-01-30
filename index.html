@@ -18,45 +18,14 @@
                 <input type="text" id="nif" placeholder="NIF" required>
                 <input type="date" id="data_nascimento" required>
             </div>
-            <input type="text" id="username" placeholder="Nome" required>
-            <input type="password" id="password" placeholder="Senha" required>
+            <input type="email" id="login-email" placeholder="E-mail" required>
+<input type="password" id="login-password" placeholder="Senha" required>
+
             <button type="submit" id="submit-button">Entrar</button>
         </form>
         <p id="toggle-text">Não tem uma conta? <a href="#" id="toggle-form">Cadastre-se</a></p>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    let formTitle = document.getElementById("form-title");
-    let extraFields = document.getElementById("extra-fields");
-    let usernameField = document.getElementById("username");
-    let submitButton = document.getElementById("submit-button");
-    let toggleText = document.getElementById("toggle-text");
+    <script src="index.js"></script>
 
-    function toggleForm(event) {
-        event.preventDefault();
-
-        if (formTitle.textContent === "Login") {
-            formTitle.textContent = "Cadastro";
-            extraFields.style.display = "block";
-            usernameField.style.display = "none";
-            submitButton.textContent = "Cadastrar";
-            toggleText.innerHTML = 'Já tem uma conta? <a href="#" id="toggle-form">Entrar</a>';
-        } else {
-            formTitle.textContent = "Login";
-            extraFields.style.display = "none";
-            usernameField.style.display = "block";
-            submitButton.textContent = "Entrar";
-            toggleText.innerHTML = 'Não tem uma conta? <a href="#" id="toggle-form">Cadastre-se</a>';
-        }
-
-        // Reatribuir evento ao novo link após troca de HTML
-        document.getElementById("toggle-form").addEventListener("click", toggleForm);
-    }
-
-    // Iniciar evento na primeira execução
-    document.getElementById("toggle-form").addEventListener("click", toggleForm);
-});
-
-    </script>
 </body>
 </html>
