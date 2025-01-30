@@ -1,53 +1,82 @@
-// Configuração do Firebase
+// Inicie o Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyDNqUV8TmCLS143Rs-Qr-L7Tf_QixNSjeU",
-    authDomain: "luckday-7f40b.firebaseapp.com",
-    databaseURL: "https://luckday-7f40b-default-rtdb.firebaseio.com",
-    projectId: "luckday-7f40b",
-    storageBucket: "luckday-7f40b.firebasestorage.app",
-    messagingSenderId: "496121680703",
-    appId: "1:496121680703:web:af86c842d2b463b90f798a",
-    measurementId: "G-0C74SLVF8J"
-  };
-  
-  // Inicializando o Firebase
-  const app = firebase.initializeApp(firebaseConfig);
-  const database = firebase.database(); // Realtime Database
-  
-  // Função para adicionar dados ao Firebase
-  function adicionarUsuario(nome, email, morada, telefone, nif, dataNascimento) {
-    const usuarioRef = database.ref('usuarios'); // Referência para a tabela de usuários
-  
-    // Adicionando os dados
-    usuarioRef.push({
-      nome: nome,
-      email: email,
-      morada: morada,
-      telefone: telefone,
-      nif: nif,
-      data_nascimento: dataNascimento
-    }).then(() => {
-      alert("Usuário cadastrado com sucesso!");
-    }).catch(error => {
-      console.error("Erro ao cadastrar usuário: ", error);
+    apiKey: "sua-api-key",
+    authDomain: "seu-auth-domain",
+    databaseURL: "seu-database-url",
+    projectId: "seu-project-id",
+    storageBucket: "seu-storage-bucket",
+    messagingSenderId: "seu-sender-id",
+    appId: "seu-app-id"
+};
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+// Aguarda o DOM carregar completamente
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleção dos elementos
+    const toggleForm = document.getElementById("toggle-form");
+    const formTitle = document.getElementById("form-title");
+    const extraFields = document.getElementById("extra-fields");
+    const submitButton = document.getElementById("submit-button");
+    const authForm = document.getElementById("auth-form");
+
+    // Variáveis para controlar o estado do formulário
+    let isRegistering = false;
+
+    // Função para alternar entre login e cadastro
+    toggleForm.addEventListener("click", function (e) {
+        e.preventDefault(); // Impede o link de recarregar a página
+        isRegistering = !isRegistering; // Alterna o estado (login/cadastro)
+
+        console.log("Alternando para:", isRegistering ? "Cadastro" : "Login");
+
+        if (isRegistering) {
+            formTitle.textContent = "Cadastro";
+            submitButton.textContent = "Cadastrar";
+            extraFields.style.display = "block"; // Exibe os campos extras de cadastro
+        } else {
+            formTitle.textContent = "Login";
+            submitButton.textContent = "Entrar";
+            extraFields.style.display = "none"; // Oculta os campos extras de cadastro
+        }
     });
-  }
-  
-  // Lidar com o envio do formulário
-  document.addEventListener('DOMContentLoaded', function() {
-    const authForm = document.getElementById('auth-form');
-    authForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-  
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const morada = document.getElementById('morada').value;
-      const telefone = document.getElementById('telefone').value;
-      const nif = document.getElementById('nif').value;
-      const dataNascimento = document.getElementById('data_nascimento').value;
-  
-      // Chamar a função para adicionar o usuário ao Firebase
-      adicionarUsuario(nome, email, morada, telefone, nif, dataNascimento);
+
+    // Evento para enviar o formulário
+    authForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Captura os dados do formulário
+        const email = isRegistering ? document.getElementById("cadastro-email").value : document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        console.log("Enviando dados: ", email, password); // Depuração para verificar os dados do formulário
+
+        if (isRegistering) {
+            // Ação de cadastro
+            console.log("Cadastrando usuário:", email, password);
+            
+            // Cadastro no Firebase
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    console.log("Usuário cadastrado:", userCredential.user);
+                    // Ações pós-cadastro, como redirecionar ou exibir mensagem
+                })
+                .catch(error => {
+                    console.error("Erro no cadastro:", error.message);
+                });
+        } else {
+            // Ação de login
+            console.log("Logando usuário:", email, password);
+
+            // Login no Firebase
+            auth.signInWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    console.log("Usuário logado:", userCredential.user);
+                    // Ações pós-login, como redirecionar ou exibir mensagem
+                })
+                .catch(error => {
+                    console.error("Erro no login:", error.message);
+                });
+        }
     });
-  });
-  
+});
